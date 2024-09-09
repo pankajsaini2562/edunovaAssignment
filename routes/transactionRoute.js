@@ -1,0 +1,13 @@
+import express from "express";
+import { issueBook } from "../controllers/transactioncontroller.js";
+import { returnBook } from "../controllers/transactioncontroller.js";
+import { transactions } from "../controllers/transactioncontroller.js";
+import { user } from "../controllers/transactioncontroller.js";
+import { dateRange } from "../controllers/transactioncontroller.js";
+const router = express.Router();
+router.post("/issue", issueBook);
+router.post("/return", returnBook);
+router.get("/book/:bookName", transactions);
+router.get("/user/:userId", user);
+router.get("/daterange", dateRange);
+export default router;
